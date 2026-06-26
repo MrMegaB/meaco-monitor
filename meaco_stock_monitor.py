@@ -121,4 +121,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if "--test-email" in sys.argv:
+        print("Sending test email...")
+        send_email([("meaco-cirro-14000-btu-super-quiet-inverter-smart-portable-air-conditioner", "TEST: Meaco Cirro 14000 BTU")])
+        print("Test email sent.")
+    else:
+        main()
