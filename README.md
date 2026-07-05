@@ -112,7 +112,6 @@ need to re-enable it.
 |---|---|
 | `meaco_stock_monitor.py` | The monitor + emailer |
 | `.github/workflows/monitor.yml` | Schedules the script and injects secrets |
-| `meaco_stock_state.json` | Auto-generated stock cache (not committed — gitignored) |
 
 ## Disclaimer
 
