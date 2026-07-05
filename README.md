@@ -8,6 +8,8 @@ maintain.
 It only emails on the *transition* to in-stock, so you don't get spammed
 every run while a product just sits in stock or stays sold out.
 
+![Example email notification](docs/email-notification-example.png)
+
 ## How it works
 
 1. A GitHub Actions workflow ([.github/workflows/monitor.yml](.github/workflows/monitor.yml))
