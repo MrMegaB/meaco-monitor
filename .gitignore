@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+meaco_stock_state.json
+practice/
+argos_stock_monitor.py
