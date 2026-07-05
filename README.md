@@ -10,6 +10,15 @@ every run while a product just sits in stock or stays sold out.
 
 ![Example email notification](docs/email-notification-example.png)
 
+## Why this exists
+
+During a UK heatwave, demand for portable air conditioners spiked and
+every Meaco model I wanted was sold out everywhere. Stock would come back
+for a few minutes at random times and sell out again before I could catch
+it — refreshing product pages by hand just isn't realistic. So I built
+this to watch the products for me and email me the second one came back
+in stock. It worked: I successfully ordered one this way.
+
 ## How it works
 
 1. A GitHub Actions workflow ([.github/workflows/monitor.yml](.github/workflows/monitor.yml))
