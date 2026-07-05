@@ -27,8 +27,13 @@ This repo has no hardcoded email or credentials — everything is supplied via
 GitHub Actions secrets, so anyone can fork/clone it and wire it to their own
 inbox.
 
-1. **Fork or clone this repo** into your own GitHub account.
-2. Go to **Settings → Secrets and variables → Actions** on your repo and add:
+1. **Fork this repo** into your own GitHub account.
+2. **Enable Actions on your fork.** GitHub disables scheduled workflows on
+   forks by default. Go to the **Actions** tab on your fork — you'll see a
+   banner saying workflows are disabled — click **"I understand my
+   workflows, go ahead and enable them"**. Without this step, nothing will
+   ever run, no matter how the secrets are set.
+3. Go to **Settings → Secrets and variables → Actions** on your repo and add:
 
    | Secret | Example | Notes |
    |---|---|---|
@@ -44,12 +49,13 @@ inbox.
    3. Enter a name like "Meaco Monitor" and click **Create**.
    4. Google shows a 16-character password (e.g. `abcd efgh ijkl mnop`) — copy it as-is (spaces are fine) and use it as `SMTP_PASS`. It's shown once and can't be viewed again.
 
-3. Edit the `HANDLES` list at the top of
+4. Edit the `HANDLES` list at the top of
    [meaco_stock_monitor.py](meaco_stock_monitor.py) to the Shopify handles of
    the products you want to watch (the last part of the product URL on
-   meaco.com).
-4. That's it — the workflow is already scheduled and will pick up your
-   secrets on the next run.
+   meaco.com), commit, and push to your fork.
+5. That's it — once Actions is enabled and secrets are set, the workflow
+   picks them up automatically on the next scheduled run. No further setup
+   needed.
 
 ### Sending a one-off test email
 
@@ -83,6 +89,11 @@ So treat `*/5 * * * *` as "as often as GitHub will allow, with 5 minutes as
 a floor" rather than a guarantee. If you need tighter timing than GitHub
 Actions can reliably give you, you'd need to run this on your own
 always-on host/cron (e.g. a Raspberry Pi, VPS, or a paid CI runner) instead.
+
+**Also note:** GitHub auto-disables scheduled workflows on any repo
+(including forks) after **60 days with no commits/activity**. If your
+monitor mysteriously stops emailing, check the Actions tab — you may just
+need to re-enable it.
 
 ## Files
 
