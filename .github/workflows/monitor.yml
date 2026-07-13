@@ -1,4 +1,4 @@
-name: Meaco Stock Monitor
+name: Meaco Stock Monitor Scheduled
 
 on:
   schedule:
